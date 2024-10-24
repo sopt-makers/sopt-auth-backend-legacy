@@ -3,7 +3,7 @@ package sopt.makers.authentication.support.common.code;
 import org.springframework.http.HttpStatus;
 
 public interface BaseCode {
-    HttpStatus getStatus();
+  HttpStatus getStatus();
 
-    String getMessage();
+  String getMessage();
 }

@@ -6,5 +6,5 @@ import org.mockito.Mock;
 
 public class UserPortTest {
 
-	@Mock private UserPort userPort;
+  @Mock private UserPort userPort;
 }

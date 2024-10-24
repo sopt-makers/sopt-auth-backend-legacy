@@ -11,124 +11,124 @@ import org.junit.jupiter.api.Test;
 
 public class UserTest {
 
-	@Test
-	public void 유저는_고유_식별_번호를_가진다() {
-		// given
-		SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
-		Profile profile = new Profile("이름", "이메일", "010-1234-5678", LocalDate.now());
-		Activity activity = new Activity(34, null, Part.IOS, Role.MEMBER);
-		Long userId = 1L;
-		User user = User.createNewUser(userId, socialAccount, profile);
+  @Test
+  public void 유저는_고유_식별_번호를_가진다() {
+    // given
+    SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
+    Profile profile = new Profile("이름", "이메일", "010-1234-5678", LocalDate.now());
+    Activity activity = new Activity(34, null, Part.IOS, Role.MEMBER);
+    Long userId = 1L;
+    User user = User.createNewUser(userId, socialAccount, profile);
 
-		// when
-		Long id = user.getId();
+    // when
+    Long id = user.getId();
 
-		// then
-		assertThat(id).isEqualTo(1L);
-	}
+    // then
+    assertThat(id).isEqualTo(1L);
+  }
 
-	@Test
-	@DisplayName("유저는 소셜 계정 정보를 가진다")
-	public void 유저는_소셜_계정_정보를_가진다() {
-		// given
-		SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
-		Profile profile = new Profile("이름", "이메일", "010-1234-5678", LocalDate.now());
-		Activity activity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
-		User user = User.createNewUser(1L, socialAccount, profile);
+  @Test
+  @DisplayName("유저는 소셜 계정 정보를 가진다")
+  public void 유저는_소셜_계정_정보를_가진다() {
+    // given
+    SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
+    Profile profile = new Profile("이름", "이메일", "010-1234-5678", LocalDate.now());
+    Activity activity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
+    User user = User.createNewUser(1L, socialAccount, profile);
 
-		// when
-		socialAccount = user.getSocialAccount();
+    // when
+    socialAccount = user.getSocialAccount();
 
-		// then
-		assertThat(user.getSocialAccount()).isEqualTo(socialAccount);
-	}
+    // then
+    assertThat(user.getSocialAccount()).isEqualTo(socialAccount);
+  }
 
-	@Test
-	@DisplayName("유저는 소셜 계정 정보를 변경할 수 있다")
-	public void 유저는_소셜_계정_정보를_변경할_수_있다() {
-		// given
-		SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
-		Profile profile = new Profile("이름", "이메일", "010-1234-5678", LocalDate.now());
-		Activity activity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
-		User user = User.createNewUser(1L, socialAccount, profile);
-		SocialAccount exchangeSocialAccount = SocialAccount.of("2L", "GOOGLE");
+  @Test
+  @DisplayName("유저는 소셜 계정 정보를 변경할 수 있다")
+  public void 유저는_소셜_계정_정보를_변경할_수_있다() {
+    // given
+    SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
+    Profile profile = new Profile("이름", "이메일", "010-1234-5678", LocalDate.now());
+    Activity activity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
+    User user = User.createNewUser(1L, socialAccount, profile);
+    SocialAccount exchangeSocialAccount = SocialAccount.of("2L", "GOOGLE");
 
-		// when
-		user = user.updateSocialAccount(exchangeSocialAccount);
+    // when
+    user = user.updateSocialAccount(exchangeSocialAccount);
 
-		// then
-		assertThat(user.getSocialAccount().equals(exchangeSocialAccount)).isTrue();
-	}
+    // then
+    assertThat(user.getSocialAccount().equals(exchangeSocialAccount)).isTrue();
+  }
 
-	@Test
-	@DisplayName("유저는 프로필 정보를 가진다")
-	public void 유저는_프로필_정보를_가진다() {
-		// given
-		SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
-		Profile profile = new Profile("이름", "이미지", "상태메시지", LocalDate.now());
-		Activity activity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
-		User user = User.createNewUser(1L, socialAccount, profile);
+  @Test
+  @DisplayName("유저는 프로필 정보를 가진다")
+  public void 유저는_프로필_정보를_가진다() {
+    // given
+    SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
+    Profile profile = new Profile("이름", "이미지", "상태메시지", LocalDate.now());
+    Activity activity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
+    User user = User.createNewUser(1L, socialAccount, profile);
 
-		// when
-		Profile profile1 = new Profile("이름", "이미지", "상태메시지", LocalDate.now());
+    // when
+    Profile profile1 = new Profile("이름", "이미지", "상태메시지", LocalDate.now());
 
-		// then
-		assertThat(user.getProfile()).isEqualTo(profile);
-	}
+    // then
+    assertThat(user.getProfile()).isEqualTo(profile);
+  }
 
-	@Test
-	@DisplayName("유저는 활동 정보를 가진다")
-	public void 유저는_활동_정보를_가진다() {
-		// given
-		SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
-		Profile profile = new Profile("이름", "이메일", "010-1234-5678", LocalDate.now());
-		Activity activity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
-		User user = User.createNewUser(1L, socialAccount, profile);
+  @Test
+  @DisplayName("유저는 활동 정보를 가진다")
+  public void 유저는_활동_정보를_가진다() {
+    // given
+    SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
+    Profile profile = new Profile("이름", "이메일", "010-1234-5678", LocalDate.now());
+    Activity activity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
+    User user = User.createNewUser(1L, socialAccount, profile);
 
-		// when
-		Activity activity1 = new Activity(35, null, Part.ANDROID, Role.MEMBER);
-		user.join(activity1);
-		user.join(activity);
+    // when
+    Activity activity1 = new Activity(35, null, Part.ANDROID, Role.MEMBER);
+    user.join(activity1);
+    user.join(activity);
 
-		// then
-		assertThat(user.getActivityHistory().getLastActivity()).isEqualTo(activity);
-	}
+    // then
+    assertThat(user.getActivityHistory().getLastActivity()).isEqualTo(activity);
+  }
 
-	@Test
-	@DisplayName("유저는 여러 활동 이력을 가질 수 있다")
-	public void 유저는_여러_활동_이력을_가질_수_있다() {
-		// given
-		SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
-		Profile profile = new Profile("이름", "이메일", "010-1234-5678", LocalDate.now());
-		Activity activity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
-		Activity activity1 = new Activity(34, null, Part.IOS, Role.MEMBER);
-		List activities = List.of(activity, activity1);
-		User user = User.createNewUser(1L, socialAccount, profile);
+  @Test
+  @DisplayName("유저는 여러 활동 이력을 가질 수 있다")
+  public void 유저는_여러_활동_이력을_가질_수_있다() {
+    // given
+    SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
+    Profile profile = new Profile("이름", "이메일", "010-1234-5678", LocalDate.now());
+    Activity activity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
+    Activity activity1 = new Activity(34, null, Part.IOS, Role.MEMBER);
+    List activities = List.of(activity, activity1);
+    User user = User.createNewUser(1L, socialAccount, profile);
 
-		// when
-		user.join(activity1);
-		user.join(activity);
-		System.out.println(user.getActivityHistory().getTotalActivitySize());
+    // when
+    user.join(activity1);
+    user.join(activity);
+    System.out.println(user.getActivityHistory().getTotalActivitySize());
 
-		// then
-		assertThat(user.getActivityHistory().getTotalActivitySize()).isEqualTo(activities.size());
-	}
+    // then
+    assertThat(user.getActivityHistory().getTotalActivitySize()).isEqualTo(activities.size());
+  }
 
-	@Test
-	@DisplayName("유저의 활동 내역은 중복되어선 안된다")
-	public void 유저의_활동_내역은_중복되어선_안된다() {
-		// given
-		SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
-		Profile profile = new Profile("이름", "이메일", "010-1234-5678", LocalDate.now());
-		Activity activity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
-		Activity sameActivity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
-		User user = User.createNewUser(1L, socialAccount, profile);
+  @Test
+  @DisplayName("유저의 활동 내역은 중복되어선 안된다")
+  public void 유저의_활동_내역은_중복되어선_안된다() {
+    // given
+    SocialAccount socialAccount = SocialAccount.of("1L", "GOOGLE");
+    Profile profile = new Profile("이름", "이메일", "010-1234-5678", LocalDate.now());
+    Activity activity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
+    Activity sameActivity = new Activity(34, null, Part.ANDROID, Role.MEMBER);
+    User user = User.createNewUser(1L, socialAccount, profile);
 
-		// when
-		user.join(activity);
+    // when
+    user.join(activity);
 
-		// then
-		assertThat(activity.equals(sameActivity)).isTrue();
-		assertThatThrownBy(() -> user.join(sameActivity)).isInstanceOf(IllegalArgumentException.class);
-	}
+    // then
+    assertThat(activity.equals(sameActivity)).isTrue();
+    assertThatThrownBy(() -> user.join(sameActivity)).isInstanceOf(IllegalArgumentException.class);
+  }
 }
