@@ -1,10 +1,10 @@
----
+<!--
 name: Makers Auth Feature PR template
 about: 구현한 기능과 변경 사항에 대해 구체적으로 작성해주세요
 title: '[FEAT/{#이슈번호}] 기능 내용'
 labels: ''
 assignees: ''
----
+-->
 
 <!--
 - 리뷰어 추가했나요?
