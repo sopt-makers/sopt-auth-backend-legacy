@@ -20,5 +20,6 @@ include(
     ":core-api",
     ":domain",
     ":infra",
-    ":support"
+    ":support",
+    ":usecase"
 )

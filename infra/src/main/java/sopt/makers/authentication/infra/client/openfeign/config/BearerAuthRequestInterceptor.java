@@ -7,11 +7,11 @@ import lombok.Getter;
 @Getter
 public abstract class BearerAuthRequestInterceptor implements RequestInterceptor {
 
-    private final String token;
+  private final String token;
 
-    public BearerAuthRequestInterceptor(final String token) {
-        this.token = token;
-    }
+  public BearerAuthRequestInterceptor(final String token) {
+    this.token = token;
+  }
 
-    public abstract void apply(final RequestTemplate template);
+  public abstract void apply(final RequestTemplate template);
 }

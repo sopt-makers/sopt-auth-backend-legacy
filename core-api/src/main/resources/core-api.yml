@@ -1,0 +1,24 @@
+spring.application.name: api
+spring.profiles.active: local
+spring:
+  config:
+    import:
+      - domain.yml
+      - application-infra.yml
+      - application-support.yml
+---
+spring.config.activate.on-profile: local
+logging:
+  level:
+    sopt.makers.authentication.infra.client.openfeign: DEBUG
+
+---
+spring.config.activate.on-profile: dev
+
+
+---
+spring.config.activate.on-profile: prod
+
+
+---
+spring.config.activate.on-profile: test

@@ -5,7 +5,7 @@ import sopt.makers.authentication.support.common.exception.BaseException;
 
 public class TokenException extends BaseException {
 
-    public TokenException(final Failure failure) {
-        super(failure);
-    }
+  public TokenException(final Failure failure) {
+    super(failure);
+  }
 }

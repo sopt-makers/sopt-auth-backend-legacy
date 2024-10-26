@@ -1,0 +1,81 @@
+
+spring.profiles.active: local
+
+---
+spring.config.activate.on-profile: local
+
+spring:
+  security:
+    user:
+      name: user
+      password: 1234
+
+security:
+  auth:
+    url:
+      local: ${LOCAL_AUTH_URL}
+      dev: ${DEV_AUTH_URL}
+      prod: ${PROD_AUTH_URL}
+
+rsa:
+  public-key: ${PUBLIC_KEY_PATH}
+  private-key: ${PRIVATE_KEY_PATH}
+---
+spring.config.activate.on-profile: dev
+
+spring:
+  security:
+    user:
+      name: ${DEV_SECURITY_USER}
+      password: ${DEV_SECURITY_PASSWORD}
+
+security:
+  auth:
+    url:
+      local: ${LOCAL_AUTH_URL}
+      dev: ${DEV_AUTH_URL}
+      prod: ${PROD_AUTH_URL}
+
+rsa:
+  public-key: ${PUBLIC_KEY_PATH}
+  private-key: ${PRIVATE_KEY_PATH}
+
+---
+spring.config.activate.on-profile: prod
+
+spring:
+  security:
+    user:
+      name: ${PROD_SECURITY_USER}
+      password: ${PROD_SECURITY_PASSWORD}
+
+security:
+  auth:
+    url:
+      local: ${LOCAL_AUTH_URL}
+      dev: ${DEV_AUTH_URL}
+      prod: ${PROD_AUTH_URL}
+
+rsa:
+  public-key: ${PUBLIC_KEY_PATH}
+  private-key: ${PRIVATE_KEY_PATH}
+
+---
+spring.config.activate.on-profile: test
+
+spring:
+  security:
+    user:
+      name: user
+      password: 1234
+
+security:
+  auth:
+    url:
+      local: ${LOCAL_AUTH_URL}
+      dev: ${DEV_AUTH_URL}
+      prod: ${PROD_AUTH_URL}
+
+rsa:
+  public-key: ${PUBLIC_KEY_PATH}
+  private-key: ${PRIVATE_KEY_PATH}
