@@ -23,7 +23,11 @@ public class UserEntity extends BaseTimeEntity {
   @NotNull String email;
   @NotNull LocalDate birthday;
   @NotNull String authPlatformId;
-  @NotNull AuthPlatform authPlatformType;
+
+  @NotNull
+  @Enumerated(EnumType.STRING)
+  AuthPlatform authPlatformType;
+
   @NotNull Boolean isActive;
 
   public UserEntity(final User user, boolean isActive) {

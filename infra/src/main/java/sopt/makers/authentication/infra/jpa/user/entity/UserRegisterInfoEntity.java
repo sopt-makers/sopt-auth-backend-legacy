@@ -24,5 +24,7 @@ public class UserRegisterInfoEntity {
   @Min(1)
   private int generation;
 
-  @NotNull private Part part;
+  @NotNull
+  @Enumerated(EnumType.STRING)
+  private Part part;
 }

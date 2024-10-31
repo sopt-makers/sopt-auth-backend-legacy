@@ -23,9 +23,16 @@ public class UserActivityHistoryEntity {
   @Min(1)
   private int generation;
 
+  @Enumerated(EnumType.STRING)
   private Team team;
-  @NotNull private Part part;
-  @NotNull private Role role;
+
+  @NotNull
+  @Enumerated(EnumType.STRING)
+  private Part part;
+
+  @NotNull
+  @Enumerated(EnumType.STRING)
+  private Role role;
 
   public UserActivityHistoryEntity(final UserEntity user, final Activity activity) {
     this.user = user;
