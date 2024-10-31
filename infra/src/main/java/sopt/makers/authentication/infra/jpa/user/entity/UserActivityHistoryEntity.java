@@ -10,7 +10,7 @@ import lombok.*;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "USER_ACTIVITY_HISTORIES")
-public class UserActivityHistory {
+public class UserActivityHistoryEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -27,11 +27,15 @@ public class UserActivityHistory {
   @NotNull private Part part;
   @NotNull private Role role;
 
-  public UserActivityHistory(final UserEntity user, final Activity activity) {
+  public UserActivityHistoryEntity(final UserEntity user, final Activity activity) {
     this.user = user;
     this.generation = activity.generation();
     this.team = activity.team();
     this.part = activity.part();
     this.role = activity.role();
+  }
+
+  public Activity toDomain() {
+    return new Activity(generation, team, part);
   }
 }

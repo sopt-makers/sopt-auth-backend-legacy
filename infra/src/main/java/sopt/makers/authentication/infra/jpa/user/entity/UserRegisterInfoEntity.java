@@ -12,7 +12,7 @@ import lombok.*;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "USER_REGISTER_INFOS")
-public class UserRegisterInfo {
+public class UserRegisterInfoEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
