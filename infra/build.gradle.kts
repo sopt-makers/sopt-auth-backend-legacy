@@ -11,6 +11,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation ("org.springframework.cloud:spring-cloud-starter-openfeign:${property("springOpenFeignVersion")}")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
 
     //db
     runtimeOnly("com.h2database:h2")
